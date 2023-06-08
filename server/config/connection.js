@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 mongoose.connect(
-  `mongodb+srv://psong1:${process.env.DB_PW}@cluster0.gkd8vjw.mongodb.net/googlebooks?retryWrites=true&w=majority`,
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/googlebooks",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
